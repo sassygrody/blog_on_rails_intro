@@ -1,7 +1,9 @@
 Blog::Application.routes.draw do   # this syntax might be wrrrooong
 
-  resources :articles
-
+  resources :articles do
+    resources :comments     #nested resource, capture heirarchial relationship
+  end
+  
   # get '/' => "welcome#index"
   root "welcome#index"
 
